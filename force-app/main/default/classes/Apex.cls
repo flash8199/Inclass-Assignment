@@ -1,14 +1,20 @@
 public with sharing class Apex {
-    
+    public Apex() {
 
-    public Integer passbyvalueandreference(Integer a)
-    {
-      return a;
+        Account a = new Account();
+        a.Name = 'hfs';
+        a.Website = 'www.bgmi.com';
+        changeWebsite(a);
+        System.debug('Website - '+a.Website);
+
     }
-    passbyvalueandreference(10)
-    integer a=20;
-    passbyvalueandreference(a)
     
 
+    public Apex(Account b) {
+
+        
     
+        b = new Account();
+        b.Website = 'www.salesforce.com';
+    } 
 }
