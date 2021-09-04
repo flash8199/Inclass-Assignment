@@ -11,11 +11,11 @@ public with sharing class extendApexclass extends extendApexclass {
     }
     
 Account acct = new Account();
-acct.Name = 'Get Cloudy'
+acct.Name ='Get Cloudy';
 insert (acct);
-Account acct = [select id, name from Account where name = ‘Test Account’ limit 1];
+Account acct = [select id, name from Account where name like Test Account limit 1];
 acct.name = 'Updated';
 update (acct);  
-Account[] accs =[SELECT Name,Phone From Account limit 10]
+Account[] accs =[SELECT Name,Phone From Account limit 10];
 
 }
