@@ -1,4 +1,4 @@
-public with sharing class extendApexclass extends extendApexclass {
+public with sharing class extendApexclass extends Apex{
     public extendApexclass() {
         System.debug('extended class');
     }
@@ -9,14 +9,16 @@ public with sharing class extendApexclass extends extendApexclass {
         return a;
         return b;
     }
-    
-Account acct = new Account();
-acct.Name ='Get Cloudy';
-insert (acct);
 
-Account acct = [select id, name from Account where name like Test Account limit 1];
-acct.name = 'Updated';
-update (acct);  
-Account[] accs =[SELECT Name,Phone From Account limit 10];
+
+    Account acct = new Account();
+    acct.Name = "Get cloudy";
+    insert (acct);
+    Account acct = [select id, name from Account where name = "Get cloudy" limit 1];
+    acct.name = "Updated Name";
+    update (acct);  
+    Account[] accs =[SELECT Name,Phone From Account limit 10]
+    
 
 }
+
