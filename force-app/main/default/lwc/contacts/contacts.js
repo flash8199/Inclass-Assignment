@@ -1,29 +1,9 @@
-import { LightningElement, track, wire} from 'lwc';
-import searchContacts from '@salesforce/apex/contactController.searchContacts';
+import { LightningElement, track } from 'lwc';
 
 export default class Contacts extends LightningElement {
 
     @track searchValue;
-
-
-    @wire(searchContacts) wiredContacts;
-    getContacts() {
-        searchContacts()
-        .then(contacts => {
-            console.log('Got Contacts: ' + contacts.length);
-        })
-        .catch(error => {
-            console.log(error)
-        });
-    }
-    value = '';
-
-    get options() {
-        return [
-            { label: 'All Contacts', value: 'option1' },
-            { label: 'Search Pattern', value: 'option2' },
-        ];
-    }
+    
 
     handleChange(event){
         const value = event.target.value;
